@@ -1,0 +1,75 @@
+unit U_tela3;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
+  FMX.Layouts, FMX.Controls.Presentation, FMX.Objects;
+
+type
+  TForm3 = class(TForm)
+    Rectangle1: TRectangle;
+    Label1: TLabel;
+    Layout1: TLayout;
+    Button2: TButton;
+    Button1: TButton;
+    Label2: TLabel;
+    Layout2: TLayout;
+    Button3: TButton;
+    Button4: TButton;
+    SpeedButton1: TSpeedButton;
+    procedure SpeedButton1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form3: TForm3;
+
+implementation
+
+{$R *.fmx}
+
+uses U_tela4, U_dm;
+
+procedure TForm3.Button1Click(Sender: TObject);
+begin
+dm.certo := dm.certo + 1;
+button2.Enabled := false;
+button1.Enabled := false;
+end;
+
+procedure TForm3.Button2Click(Sender: TObject);
+begin
+dm.errado := dm.errado + 1;
+button2.Enabled := false;
+button1.Enabled := false;
+end;
+
+procedure TForm3.Button3Click(Sender: TObject);
+begin
+dm.certo := dm.certo + 1;
+button2.Enabled := false;
+button1.Enabled := false;
+end;
+
+procedure TForm3.Button4Click(Sender: TObject);
+begin
+dm.errado := dm.errado + 1;
+button2.Enabled := false;
+button1.Enabled := false;
+end;
+
+procedure TForm3.SpeedButton1Click(Sender: TObject);
+begin
+Form4.Show();
+end;
+
+end.
