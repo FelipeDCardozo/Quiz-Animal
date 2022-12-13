@@ -1,0 +1,45 @@
+unit U_quiz;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
+  FMX.Controls.Presentation, FMX.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Timer1: TTimer;
+    ProgressBar1: TProgressBar;
+    procedure Timer1Timer(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.fmx}
+
+uses U_tela2;
+
+procedure TForm1.Timer1Timer(Sender: TObject);
+begin
+progressbar1.Value := progressbar1.Value +1;
+
+if (progressbar1.Value = progressbar1.max) then
+
+begin
+timer1.Enabled := false;
+showmessage('Bem vindo ao Quiz!!!');
+Form2.Show();
+
+
+end;
+end;
+
+end.
